@@ -1,0 +1,22 @@
+# import numpy as np
+# ar_lin=np.linspace(1,10,num=5)
+# print(ar_lin)
+# arr= np.array([[1,2,3],[9,5,6]])
+# print(np.max(arr,axis=1))
+# arr1=np.array([1,2,3])
+# print(np.sin(arr))
+# print(np.cos(arr))
+# arr2= np.array([1,2,3,4,5,6,7,8,9,10,11,12])
+# x=arr2.reshape(2,3,2)
+# print(x)
+import numpy as np
+import matplotlib.pyplot as plt
+
+x=np.arange(1,4* np.pi,1.2)
+
+y=np.cos(x)
+
+plt.plot(x,y)
+plt.xlabel("xaxis")
+plt.ylabel("yaxis")
+plt.show()

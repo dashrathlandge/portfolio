@@ -1,0 +1,33 @@
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split
+import numpy as np
+import pandas as pd
+df = pd.read_csv(r"C:\Users\Administrator\Downloads\test (1).csv")
+print(df)
+# independent_variable cholestrol
+x = np.array([df["cholesterol_mg_dl"]]).reshape(-1,1)
+
+
+# dependent_variable servival 
+y = np.array(df["survival"])
+
+x_train , x_test , y_train , y_test = train_test_split(x , y , test_size=0.2 , random_state=2)
+
+clfModel = LogisticRegression().fit(x_train , y_train)
+
+# accurecy score
+acc = accuracy_score(y_test , clfModel.predict(x_test)) * 100
+
+cholesterol = 200
+pridict = clfModel.predict([[cholesterol]])[0]
+
+if pridict == 1:
+    print(f"cholesterol lavel is {cholesterol} : survive")
+elif pridict == 0 :
+    print(f"cholesterol lavel is {cholesterol} : not survive")
+# import pandas as pd
+
+# df = pd.read_csv(r"C:\Users\Administrator\Downloads\test (1).csv")
+# df.head()
+# print(df) 

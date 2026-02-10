@@ -1,0 +1,44 @@
+import numpy as np
+# arr1=np.random.randint(1, 10, 5) #Random integers
+# print(arr1)
+# arr1=np.arange(1,10) #Range with step size
+# print(arr1)
+# arr1=np.random.rand(1,10) #Random numbers (0–1) float
+# print(arr1)
+# arr1=np.random.randn(1,10) #Normal distribution (mean=0, std=1)
+# print(arr1)
+# print(np.size(arr1))#total (rows, colums)
+# arr1=np.zeros((2,3)) #Array filled with 0s
+# print(arr1)
+# arr1=np.ones((2,2)) # Array filled with 1s
+# print(arr1)
+import numpy as np
+# arr = np.array([[1, 2, 3],
+#                 [4, 5, 6]])
+
+# print(arr.shape) #Get dimensions(row ,colum)
+# print(arr.itemsize) #Memory per element (bytes)
+# print(arr.ndim) #Number of dimensions
+# arr=np.linspace(0,10,3) #Linear spacing
+# print("linespace: ",arr)
+# arr=np.logspace(1,3,3) #Logarithmic spacing
+# print(arr)
+arr =np.array ([2,4,5,3,7,8])
+mean=np.mean(arr)  #Average
+print("mean",mean)
+min=np.min(arr) #Minimum
+print("min",min)
+max=np.max(arr) #Maximum
+print("max",max)
+sum=np.sum(arr)
+print("sum",sum) #Sum
+median=np.median(arr) #Median
+print("median",median)
+std=np.std(arr) #Standard deviation
+print("std",std)
+var=np.var(arr) #Variance
+print("var",var)
+prod=np.prod(arr) #Multiply all elements
+print("prod",prod)
+sqrt=np.sqrt(arr) #sqrt number
+print("sqt",sqrt)

@@ -1,0 +1,163 @@
+#1
+# import numpy as np
+# n=int(input("Enter the number of stundents"))
+
+# marks=np.random.randint(35,101,(n,3))
+# print("the matrix 3x3",marks)
+
+# mean_per_stundent=np.mean(marks)
+# print("mean_per_stundent",mean_per_stundent)
+
+# mean_per_subject=np.mean(marks,axis=0)
+# print("mean_per_stundent",mean_per_subject)
+
+# students_scoring_below_class=np.argmax(marks)
+# print("students scoring below class",students_scoring_below_class)
+#2
+# import numpy as np 
+# matrix =np.random.randint(1,100,(5,5))
+# print("matrix",matrix)
+
+# print("row-wise max:",matrix.max(axis=1))
+
+# print("column-wise min",matrix.min(axis=0))
+
+# print("overall standrad deviation:",matrix.std())
+
+# print("count >50:",(matrix >50).sum())
+
+#3
+# import numpy as np 
+# arr =np.random.randint(1,200,size=100)
+# print("array:",arr)
+
+# even_number=arr %2 ==0
+# odd_number=arr%2 !=0
+  
+# arr[even_number]= arr[even_number]**2
+# arr[odd_number]= arr[odd_number]**3
+
+# print("\nTransformer arr\n",arr)
+#4
+# import numpy as np
+
+# m,n=4,3
+# arr=np.random.rand(m,n)
+# print("original matrix",arr)
+# max_val=np.max(arr)
+# print("matrix max:",max_val)
+# min_val=np.min(arr)
+# print("matrix min",min_val)
+
+# std_val=np.std(arr)
+# print("matrix std",std_val)
+
+# minmax=(arr-min_val) / (max_val-min_val)
+
+# standard=(arr- np.mean(arr))/std_val
+# print("min-max scaled",minmax)
+# print("standard scaled:",standard)
+#5
+# import numpy as np
+# n = 10
+# np.random.seed(42)
+# points = np.random.rand(n, 2)  
+# distances = np.sqrt(points[:,0]**2 + points[:,1]**2)
+# farthest_index = np.argmax(distances)
+# farthest_point = points[farthest_index]
+# avg_distance = distances.mean()
+
+# print("Points:\n", points)
+# print("Distances from origin:", distances)
+# print("Farthest point:", farthest_point, "Distance:", distances[farthest_index])
+# print("Average distance:", avg_distance)
+#6
+#import numpy as np 
+# import matplotlib.pyplot as plt
+
+# n=100
+# x=np.random.rand(n)
+
+# noise =np.random.normal(0, 0.1,n)
+# y =2*x + noise
+
+# corr =np.corrcoef(x,y)[0,1]
+# print("correlation coefficient:",corr)
+
+# plt.scatter(x, y)
+# plt.xlabel("x")
+# plt.ylabel("y")
+# plt.title("Scatter Plot of x and y")
+# plt.show()
+#7
+# import numpy as np
+# import random
+# temps= [random.randint(20,40) for _ in range(30) ]
+# print("hottest:",max(temps))
+# print("coldest:",min(temps))
+
+# print("7-day moving average:")
+# for i in range(24):
+#     print(sum(temps[i:i+7])/7)
+
+# avg= sum(temps)/30
+
+# print("day above monyhly avverage:")
+# for i in range(30):
+#     if temps[i] >avg:
+#         print("day",i+1)
+#8
+# import numpy as np
+# import matplotlib.pyplot as plt
+
+# img = np.full((100, 100), 50, dtype=np.float32)
+
+# img[0, :] = img[-1, :] = img[:, 0] = img[:, -1] = img[:, 1]
+# img[30:70, 30:70] += 50  
+
+# np.random.seed(42)
+# img += np.random.randint(-20, 21, (100, 100))  
+
+# img = np.clip(img, 0, 255)
+
+# plt.imshow(img, cmap='gray')
+# plt.title("Simulated Grayscale Image")
+# plt.show()
+#9
+# import numpy as np
+
+# salaries = [50000, 60000, 55000, 70000, 65000, 48000]
+# departments = ["HR", "IT", "HR", "IT", "Finance", "HR"]
+
+# dept_totals = {}
+# dept_counts = {}
+
+# for i in range(len(salaries)):
+#     dept = departments[i]
+#     salary = salaries[i]
+    
+#     dept_totals[dept] = dept_totals.get(dept, 0) + salary
+#     dept_counts[dept] = dept_counts.get(dept, 0) + 1
+
+# print("Average salary per department:")
+# for dept in dept_totals:
+#     avg = dept_totals[dept] / dept_counts[dept]
+#     print(dept, ":", avg) 
+
+# highest_dept = max(dept_totals, key=dept_totals.get)
+# print("\nDepartment with highest total salary:")
+# print(highest_dept)
+#10
+# import numpy as np
+# import matplotlib.pyplot as plt
+
+# matrix=np.zeros((200,200))
+
+# np.fill_diagonal(matrix,1)
+# matrix[80:120, 80:120]=1
+
+# y,x=np.ogrid[:200, :200]
+# matrix[(x-100)**2+(y-100)**2 <= 50**2]=1
+# plt.imshow(matrix, cmap='gray')
+# plt.axis('off')
+# plt.show()
